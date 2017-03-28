@@ -1,0 +1,39 @@
+$navbar-default-bg: #8B0101;
+$input-border-focus: #8B0101;
+$btn-border-radius-large: 0px;
+$btn-primary-bg: #8B0101;
+$body-bg: #E6E6E6;
+$border-radius-base: 0px;
+$navbar-default-border: 0px;
+$navbar-default-link-color: #FFF;
+$navbar-default-link-hover-color: #FFF;
+$navbar-default-link-active-color: #FFF;
+$font-family-sans-serif: 'Roboto',"Helvetica Neue",Helvetica,Arial,sans-serif;
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+#logo {
+  float: left;
+  font-size: 1.7em;
+  color: #FFF;
+  letter-spacing: -1px;
+  font-weight: 400;
+}
+
+.form-group.required .control-label:after { 
+    color: #d00;
+    content: "*";
+    position: absolute;
+    margin-left: 8px;
+    top:7px;
+}
+
+.check {
+  margin-top:-1px!important;
+  padding-left:0px !important;
+}
+
+.drop {
+  margin-top:6px!important;
+}

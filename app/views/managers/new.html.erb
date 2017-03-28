@@ -1,0 +1,88 @@
+<div class="container">
+  <%= render 'shared/page_title', title: "Sign Up" %>
+
+<div class="row">
+  <div class="col-md-12">
+    <%= form_for(@manager, :html => {class: "form-horizontal", role: "form"}) do |f| %>
+      <div class="form-group required">
+        <div class="control-label col-md-2">
+          <%= f.label :username %>
+        </div>
+        <div class="col-md-8">
+          <%= f.text_field :username, class: "form-control", placeholder: "Enter your username", autofocus: true %>
+        </div>
+      </div>
+      <div class="form-group required">
+        <div class="control-label col-md-2">
+          <%= f.label :first_name, "First Name" %>
+        </div>
+        <div class="col-md-8">
+          <%= f.text_field :first_name, class: "form-control", placeholder: "First Name" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="control-label col-md-2">
+          <%= f.label :last_name, "Last Name" %>
+        </div>
+        <div class="col-md-8">
+          <%= f.text_field :last_name, class: "form-control", placeholder: "Last Name" %>
+        </div>
+      </div>
+      <div class="form-group required">
+        <div class="control-label col-md-2">
+          <%= f.label :email %>
+        </div>
+        <div class="col-md-8">
+          <%= f.email_field :email, class: "form-control", placeholder: "Enter your email" %>
+        </div>
+      </div>
+      <div class="form-group required">
+        <div class="control-label col-md-2">
+          <%= f.label :password %>
+        </div>
+        <div class="col-md-8">
+          <%= f.password_field :password, class: "form-control", placeholder: "Choose a password" %>
+        </div>
+      </div>
+      <div class="form-group required">
+        <div class="control-label col-md-2">
+          <%= f.label :password_confirmation, "Confirm Password" %>
+        </div>
+        <div class="col-md-8">
+          <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Confirm password" %>
+        </div>
+      </div>
+      <div class="form-group required">
+        <div class="control-label col-md-2">
+          <%= f.label :dob, "Date of Birth" %>
+        </div>
+        <div class="col-md-8 drop">
+          <%= f.date_select :dob, class: "form-control", order: [:day, :month, :year], start_year: 1900 %>
+        </div>
+      </div>
+      <div class="form-group required">
+        <div class="control-label col-md-2">
+          <%= f.label :country_id, "Country" %>
+        </div>
+        <div class="col-md-8 drop">
+         <%= f.select :country_id, options_for_select(@countries.collect { |country|
+    [country.name.titleize, country.id] }, 1), {}, { id: 'countries_select' } %>
+        </div>
+      </div>
+        <div class="form-group">
+        <div class="control-label col-md-2">
+          <%= f.label :show_name, "Show Name?" %>
+        </div>
+        <div class="col-md-1">
+          <%= f.check_box :show_name, class: "form-control check" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+          <%= f.submit "Create Account", class: "btn btn-primary btn-lg" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+</div>
